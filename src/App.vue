@@ -1,29 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <Home/>
+    <br>
+    <b-container>
+      <b-row>
+        <b-col md="12">
+          <SeccionFormulario/>
+        </b-col>
+    </b-row>
+    </b-container>
   </div>
 </template>
 
+<style lang="postcss">
+  body{
+    background:rgba(0, 0, 0, 0.1);
+  }
+  
+</style>
+>
+
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import Home from './components/Home.vue';
+import SeccionFormulario from './components/SeccionFormulario.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    Home,
+    SeccionFormulario,
   },
 })
 export default class App extends Vue {}
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
