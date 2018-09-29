@@ -56,6 +56,7 @@ export default class Formulario extends Vue {
     public statePasswordSUA: any = null;
     public stateArchivo: any = null;
     public modalMessage: string = '';
+    public refs: any = this.$refs;
 
     public async beforeMount() {
         await this.fetchRepositorios();
@@ -115,11 +116,11 @@ export default class Formulario extends Vue {
           },
         ).then((res) => {
             this.modalMessage = res.data.message;
-            this.$refs.uploadModal.show();
+            this.refs.uploadModal.show();
         })
         .catch((err) => {
             this.modalMessage = 'Error: No se puede subir';
-            this.$refs.uploadModal.show();
+            this.refs.uploadModal.show();
         });
     }
 }
