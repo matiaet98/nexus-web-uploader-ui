@@ -102,7 +102,6 @@ export default class Formulario extends Vue {
         if (! await this.validateArchivo()) { return; }
         const formData = new FormData();
         formData.append('archivo', this.archivo);
-        formData.append('nombreArchivo', Buffer.from(this.archivo.name).toString('base64'));
         formData.append('usuarioSUA', Buffer.from(this.usuarioSUA).toString('base64'));
         formData.append('passwordSUA', Buffer.from(this.passwordSUA).toString('base64'));
         formData.append('repositorio', Buffer.from(this.repositorio).toString('base64'));
